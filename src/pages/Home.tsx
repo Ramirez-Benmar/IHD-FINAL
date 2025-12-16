@@ -165,7 +165,7 @@ const Home = () => {
                     <p className="text-gray-300 text-sm">{project.location}</p>
                   </div>
                   <div className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-accent">
-                    View full case study
+                    View
                     <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
                   </div>
                 </button>
