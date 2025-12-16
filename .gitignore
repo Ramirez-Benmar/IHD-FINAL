@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+npm-debug.log*
+pnpm-lock.yaml
+yarn.lock
+.env
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
