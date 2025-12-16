@@ -1,18 +1,89 @@
 export const navItems = [
-  { label: 'Home', target: 'home' },
-  { label: 'About', target: 'about' },
-  { label: 'Services', target: 'services' },
-  { label: 'Projects', target: 'projects' },
-  { label: 'Sponsors', target: 'sponsors' },
-  { label: 'Contact', target: 'contact' }
+  { label: 'Home', target: '/' },
+  { label: 'About', target: '/about' },
+  { label: 'Services', target: '/services' },
+  { label: 'Projects', target: '/projects' },
+  { label: 'Partners', target: '/partners' },
+  { label: 'Contact Us', target: '/contact' }
 ];
 
-export const people = Array.from({ length: 6 }).map((_, index) => ({
-  name: `Team Member ${index + 1}`,
-  role: 'Technology Consultant',
-  bio: 'Architects seamless, secure, and scalable systems that keep buildings and teams connected.',
-  id: `person-${index + 1}`
-}));
+export const heads = [
+  {
+    name: 'Hadjie Malaluan',
+    role: 'Team Head/Sr. Engineer (Security)',
+    image: '/team/Hadjie.png',
+    id: 'head-hadjie'
+  },
+  {
+    name: 'Almario Ramirez Jr.',
+    role: 'Technical Director',
+    image: '/team/Ramirez.png',
+    id: 'head-ramirez'
+  },
+  {
+    name: 'Judith Paz',
+    role: 'Operations Director',
+    image: '/team/PazJ.png',
+    id: 'head-pazj'
+  }
+];
+
+export const employees = [
+  {
+    name: 'Spark Dagami',
+    role: 'Sr. Engineer (IT)',
+    image: '/team/Spark.png',
+    id: 'employee-spark'
+  },
+  {
+    name: 'Miguel Primicias',
+    role: 'Acoustic Consultant',
+    image: '/team/Primicias.png',
+    id: 'employee-primicias'
+  },
+  {
+    name: 'Randel Laureta',
+    role: 'Audio Visual Consultant',
+    image: '/team/John.png',
+    id: 'employee-randel'
+  },
+  {
+    name: 'Florante Paz',
+    role: 'BIM/CAD Design Coordinator',
+    image: '/team/PazF.png',
+    id: 'employee-pazf'
+  },
+  {
+    name: 'Hector Dionisio',
+    role: 'Technology Engineer',
+    image: '/team/Hector.png',
+    id: 'employee-hector'
+  },
+  {
+    name: 'Mark Lazatin',
+    role: 'Technology Engineer',
+    image: '/team/Mark.png',
+    id: 'employee-mark'
+  },
+  {
+    name: 'Shem Mishael Cubal',
+    role: 'Jr. Acoustic Designer',
+    image: '/team/Shem3.png',
+    id: 'employee-shem'
+  },
+  {
+    name: 'Emmanuel Olorvida',
+    role: 'Technology Engineer',
+    image: '/team/Emman.png',
+    id: 'employee-emman'
+  },
+  {
+    name: 'Johnkiel Santos',
+    role: 'Technology Engineer',
+    image: '/team/John.png',
+    id: 'employee-johnkiel'
+  }
+];
 
 export const projectHighlights = [
   {
@@ -32,6 +103,6 @@ export const projectHighlights = [
   },
 ];
 
-export const sponsors = Array.from({ length: 10 }).map((_, index) => ({
-  name: `Sponsor ${index + 1}`,
+export const partners = Array.from({ length: 10 }).map((_, index) => ({
+  name: `Partner ${index + 1}`,
 }));

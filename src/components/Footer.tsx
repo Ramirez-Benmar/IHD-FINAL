@@ -6,12 +6,8 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const handleNavClick = (target: string) => {
-    if (target === 'home') {
-      navigate('/', { replace: true });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    navigate('/', { state: { scrollTo: target } });
+    navigate(target);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -43,7 +39,7 @@ const Footer = () => {
           <p className="text-sm text-gray-300">info@ihd.ph</p>
           <p className="text-sm text-gray-300">+63 (000) 000-0000</p>
           <button
-            onClick={() => handleNavClick('contact')}
+            onClick={() => handleNavClick('/contact')}
             className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_4px_rgba(123,5,186,0.25)]"
           >
             Contact us
