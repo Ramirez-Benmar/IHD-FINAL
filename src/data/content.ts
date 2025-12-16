@@ -9,26 +9,26 @@ export const navItems = [
 
 export const people = Array.from({ length: 6 }).map((_, index) => ({
   name: `Team Member ${index + 1}`,
-  role: 'Lighting Specialist',
-  bio: 'Expert in tailored illumination with a passion for immersive environments.',
+  role: 'Technology Consultant',
+  bio: 'Architects seamless, secure, and scalable systems that keep buildings and teams connected.',
   id: `person-${index + 1}`
 }));
 
 export const projectHighlights = [
   {
-    title: 'Radiant Atrium',
+    title: 'Connected Campus',
     type: 'Commercial',
-    summary: 'Layered lighting and dynamic scenes tailored for modern lobbies.',
+    summary: 'Enterprise network backbone with converged security and smart systems.',
   },
   {
-    title: 'Skyline Lounge',
-    type: 'Hospitality',
-    summary: 'Warm, cinematic moods that evolve from dusk to dawn.',
+    title: 'Adaptive Workspace',
+    type: 'Corporate',
+    summary: 'IoT-driven space management with intuitive AV and collaboration layers.',
   },
   {
-    title: 'Garden Glow',
-    type: 'Residential',
-    summary: 'Subtle exterior paths with immersive planting highlights.',
+    title: 'Resilient Data Hall',
+    type: 'Infrastructure',
+    summary: 'Critical environment with redundant systems and active monitoring.',
   },
 ];
 

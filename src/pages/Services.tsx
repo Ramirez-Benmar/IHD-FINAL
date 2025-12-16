@@ -9,7 +9,8 @@ const Services = () => {
             <p className="text-sm uppercase tracking-[0.3em] text-gray-300">Services</p>
             <h1 className="font-heading text-4xl leading-tight">Services overview coming soon.</h1>
             <p className="max-w-2xl text-gray-300">
-              This dedicated page will be populated with process diagrams, deliverables, and timelines. For now, reach out and we will tailor a scope for you.
+              This dedicated page will be populated with frameworks, technology stacks, deliverables, and timelines. For now,
+              reach out and we will tailor a scope for you.
             </p>
           </div>
         </Reveal>

@@ -13,9 +13,9 @@ const Projects = () => {
         <Reveal>
           <div className="flex flex-col gap-2">
             <p className="text-sm uppercase tracking-[0.3em] text-gray-300">Projects</p>
-            <h1 className="font-heading text-4xl leading-tight">Showcasing fourteen luminous journeys.</h1>
+            <h1 className="font-heading text-4xl leading-tight">Fourteen integrated technology journeys.</h1>
             <p className="max-w-2xl text-gray-300">
-              Each space begins with a narrative; here are placeholders for fourteen case studies ready to be illuminated.
+              Each engagement starts with a vision; here are placeholders for fourteen case studies ready to be detailed.
             </p>
           </div>
         </Reveal>

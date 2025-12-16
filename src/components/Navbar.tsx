@@ -41,10 +41,10 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 backdrop-blur-lg bg-primary/70 border-b border-secondary/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="PL Light logo" className="h-10 w-auto" />
+          <img src={logo} alt="IHD Philippines logo" className="h-10 w-auto" />
           <div className="leading-tight">
-            <p className="font-heading text-lg tracking-tight">PL Light</p>
-            <p className="text-sm text-gray-300">Illuminating experiences</p>
+            <p className="font-heading text-lg tracking-tight">IHD Philippines Ltd. Inc.</p>
+            <p className="text-sm text-gray-300">Technology Consultancy</p>
           </div>
         </div>
 
