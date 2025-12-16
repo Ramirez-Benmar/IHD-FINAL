@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { navItems } from '../data/content';
-import logo from '/logo.svg';
+import logo from '/logo.png';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className="bg-secondary/60 border-t border-secondary/70">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-10 md:grid-cols-3">
         <div className="space-y-3">
-          <img src={logo} alt="IHD Philippines" className="h-12 w-auto" />
+          <img src={logo} alt="IHD Philippines" className="h-16 w-auto" />
           <p className="text-sm text-gray-300">
             A trusted partner for smart, integrated building solutions across enterprise environments.
           </p>

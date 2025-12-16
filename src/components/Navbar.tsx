@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { navItems } from '../data/content';
-import logo from '/logo.svg';
+import logo from '/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,16 +40,12 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-lg bg-primary/70 border-b border-secondary/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="IHD Philippines logo" className="h-10 w-auto" />
-          <div className="leading-tight">
-            <p className="font-heading text-lg tracking-tight">IHD Philippines Ltd. Inc.</p>
-            <p className="text-sm text-gray-300">Technology Consultancy</p>
-          </div>
+        <div className="flex items-center">
+          <img src={logo} alt="IHD Philippines logo" className="h-16 w-auto" />
         </div>
 
         <button
-          className="md:hidden inline-flex items-center justify-center rounded-lg border border-secondary/70 px-3 py-2 text-sm"
+          className="lg:hidden inline-flex items-center justify-center rounded-lg border border-secondary/70 px-3 py-2 text-sm"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {isOpen ? 'Close' : 'Menu'}
@@ -58,23 +54,23 @@ const Navbar = () => {
         <nav
           className={`${
             isOpen ? 'absolute left-0 top-full w-full bg-primary/95 border-t border-secondary/70' : 'hidden'
-          } md:block`}
+          } lg:block`}
         >
-          <ul className="flex flex-col md:flex-row md:items-center md:gap-8">
+          <ul className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
             {navItems.map((item) => (
               <li key={item.label}>
                 <button
-                  className="w-full px-6 py-3 text-left md:px-0 md:py-0 md:text-sm text-gray-200 transition hover:text-accent"
+                  className="w-full px-6 py-4 text-center lg:px-0 lg:py-0 lg:text-sm text-gray-200 transition hover:text-accent"
                   onClick={() => handleNavClick(item.target)}
                 >
                   {item.label}
                 </button>
               </li>
             ))}
-            <li className="md:ml-6">
+            <li className="px-6 pb-4 lg:pb-0 lg:px-0 lg:ml-6">
               <button
                 onClick={() => navigate('/projects')}
-                className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_4px_rgba(123,5,186,0.25)]"
+                className="w-full lg:w-auto rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_4px_rgba(123,5,186,0.25)]"
               >
                 View Projects
               </button>
