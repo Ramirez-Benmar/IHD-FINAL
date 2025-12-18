@@ -35,7 +35,7 @@ const Home = () => {
       >
         {/* Background Image with Opacity */}
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40"
           style={{ backgroundImage: "url('/background/Home Background.png')" }}
         />
         
@@ -56,20 +56,20 @@ const Home = () => {
             </p>
           </Reveal>
           <Reveal delay={360}>
-            <div className="flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => navigate('/projects')}
-                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_4px_rgba(123,5,186,0.25)]"
-              >
-                Explore projects
-              </button>
-              <button
-                onClick={() => navigate('/services')}
-                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_4px_rgba(123,5,186,0.25)]"
-              >
-                View services
-              </button>
-            </div>
+          <div className="flex flex-wrap items-center gap-4">
+  <button
+    onClick={() => navigate('/projects')}
+    className="rounded-full border-2 border-secondary/70 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:border-accent hover:text-accent"
+  >
+    Explore projects
+  </button>
+  <button
+    onClick={() => navigate('/services')}
+    className="rounded-full border-2 border-secondary/70 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:border-accent hover:text-accent"
+  >
+    View services
+  </button>
+</div>
           </Reveal>
         </div>
       </section>
@@ -96,7 +96,7 @@ const Home = () => {
               </div>
               <button
                 onClick={() => navigate('/about')}
-                className="rounded-full border border-secondary/70 px-6 py-3 text-sm font-semibold text-gray-200 transition hover:border-accent hover:text-white"
+                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_10px_rgba(123,5,186,0.25)]"
               >
                 About Us
               </button>
@@ -126,7 +126,7 @@ const Home = () => {
             </div>
             <button
               onClick={() => navigate('/services')}
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_4px_rgba(123,5,186,0.25)]"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:shadow-[0_0_0_10px_rgba(123,5,186,0.25)]"
             >
               Go to services page
             </button>
@@ -202,9 +202,13 @@ const Home = () => {
               {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex h-16 w-40 flex-shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-semibold text-gray-200 border border-secondary/60"
+                  className="flex h-20 w-48 flex-shrink-0 items-center justify-center p-4"
                 >
-                  {partner.name}
+                  <img 
+                    src={partner.image} 
+                    alt={partner.name}
+                    className="h-full w-full object-contain mix-blend-lighten"
+                  />
                 </div>
               ))}
             </div>

@@ -103,6 +103,9 @@ export const projectHighlights = [
   },
 ];
 
-export const partners = Array.from({ length: 10 }).map((_, index) => ({
-  name: `Partner ${index + 1}`,
-}));
+export const partners = [
+  { name: 'Ayala Land', image: '/partners/ayala.png' },
+  { name: 'DMCI', image: '/partners/dmci.png' },
+  { name: 'Filinvest', image: '/partners/filinvest.png' },
+  { name: 'Megaworld', image: '/partners/megaworld.png' },
+];

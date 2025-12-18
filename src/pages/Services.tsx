@@ -30,13 +30,6 @@ const Services = () => {
       description: 'Integrated AV systems and multimedia solutions'
     },
     {
-      name: 'ELV Systems',
-      route: '/services/elv',
-      logo: '/serviceslogos/elv.png',
-      bgImage: '/servicesbg/IT.jpeg',
-      description: 'Extra Low Voltage systems integration'
-    },
-    {
       name: 'Security Systems',
       route: '/services/security',
       logo: '/serviceslogos/security.png',
@@ -54,14 +47,14 @@ const Services = () => {
       name: 'IoT',
       route: '/services/iot',
       logo: '/serviceslogos/internet-of-things.png',
-      bgImage: '/servicesbg/IT.jpeg',
+      bgImage: '/servicesbg/IoT.jpeg',
       description: 'Internet of Things and smart building solutions'
     },
     {
       name: 'GRMS',
       route: '/services/grms',
       logo: '/serviceslogos/electrical.png',
-      bgImage: '/servicesbg/IT.jpeg',
+      bgImage: '/servicesbg/GRMS.jpeg',
       description: 'Guest room management systems'
     }
   ];

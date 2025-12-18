@@ -4,11 +4,9 @@ import Reveal from '../../components/Reveal';
 const services = [
   { name: 'Acoustics', route: '/services/acoustics' },
   { name: 'Audio-Visual & Multimedia', route: '/services/audio-visual' },
-  { name: 'ELV Systems', route: '/services/elv' },
   { name: 'Security Systems', route: '/services/security' },
   { name: 'Information Technology', route: '/services/infotech' },
   { name: 'IoT', route: '/services/iot' },
-  { name: 'BMS / EPMS', route: '/services/bmsepms' },
   { name: 'GRMS', route: '/services/grms' }
 ];
 

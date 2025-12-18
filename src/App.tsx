@@ -13,11 +13,9 @@ import Footer from './components/Footer';
 // Service pages
 import { Acoustics } from './pages/Services/acoustics.tsx';
 import { AudioVisual } from './pages/Services/audiovisual.tsx';
-import { ELV } from './pages/Services/elv.tsx';
 import { Security } from './pages/Services/security.tsx';
 import { InfoTech } from './pages/Services/infotech.tsx';
 import { IOT } from './pages/Services/iot.tsx';
-import { BMSEPMS } from './pages/Services/bmsepms.tsx';
 import { GRMS } from './pages/Services/grms.tsx';
 
 const ScrollToTop = () => {
@@ -43,11 +41,9 @@ const App = () => {
         <Route path="/partners" element={<Partners />} />
         <Route path="/services/acoustics" element={<Acoustics />} />
         <Route path="/services/audio-visual" element={<AudioVisual />} />
-        <Route path="/services/elv" element={<ELV />} />
         <Route path="/services/security" element={<Security />} />
         <Route path="/services/infotech" element={<InfoTech />} />
         <Route path="/services/iot" element={<IOT />} />
-        <Route path="/services/bmsepms" element={<BMSEPMS />} />
         <Route path="/services/grms" element={<GRMS />} />
       </Routes>
       <Footer />
