@@ -253,11 +253,11 @@ If you want to add reCAPTCHA before deploying:
 
 ## 🌐 Domain Configuration (Optional)
 
-If using custom domain (e.g., ihdphilippines.com):
+If using custom domain (e.g., ihd-mnl.com):
 
 1. In `public/` folder, create `CNAME` file with your domain:
 ```
-ihdphilippines.com
+ihd-mnl.com
 ```
 
 2. Update DNS records with your domain provider (GoDaddy):
@@ -275,7 +275,7 @@ Value: your-username.github.io
 ```
 
 3. In GitHub repo Settings → Pages:
-   - Custom domain: ihdphilippines.com
+   - Custom domain: ihd-mnl.com
    - Enforce HTTPS: ✓
 
 ---
