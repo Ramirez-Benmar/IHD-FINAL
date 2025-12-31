@@ -39,8 +39,12 @@ const Partners = () => {
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {partners.map((partner, index) => (
                 <Reveal key={partner.name} delay={index * 40}>
-                  <div className="flex h-32 items-center justify-center rounded-2xl border border-secondary/60 bg-primary/50 p-4 transition hover:border-accent hover:bg-primary/70">
-                    <span className="text-center font-semibold text-gray-200">{partner.name}</span>
+                  <div className="flex h-32 items-center justify-center rounded-2xl border border-secondary/60 bg-primary/50 p-6 transition hover:border-accent hover:bg-primary/70">
+                    <img 
+                      src={partner.image} 
+                      alt={partner.name}
+                      className="h-full w-full object-contain mix-blend-lighten"
+                    />
                   </div>
                 </Reveal>
               ))}

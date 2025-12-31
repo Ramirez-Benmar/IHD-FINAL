@@ -1,5 +1,7 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState, FormEvent, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Reveal from '../components/Reveal';
 import { partners } from '../data/content';
 import { projectImages } from '../data/projectImages';
@@ -7,12 +9,106 @@ import { projectImages } from '../data/projectImages';
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [sending, setSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const COOLDOWN_KEY = 'contact_form_cooldown_home';
+  const COOLDOWN_DURATION = 60000; // 1 minute in milliseconds
 
   // Random project selection
   const randomProjects = useMemo(() => {
     const shuffled = [...projectImages].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 3);
   }, []);
+
+  // Email validation regex (supports all major email providers)
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
+  // Check cooldown
+  const checkCooldown = (): boolean => {
+    const lastSubmit = localStorage.getItem(COOLDOWN_KEY);
+    if (lastSubmit) {
+      const timeSinceLastSubmit = Date.now() - parseInt(lastSubmit);
+      if (timeSinceLastSubmit < COOLDOWN_DURATION) {
+        const secondsRemaining = Math.ceil((COOLDOWN_DURATION - timeSinceLastSubmit) / 1000);
+        setStatusMessage({ 
+          type: 'error', 
+          text: `Please wait ${secondsRemaining} seconds before sending another message.` 
+        });
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatusMessage(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const email = formData.get('user_email') as string;
+    const message = formData.get('message') as string;
+    const name = formData.get('user_name') as string;
+
+    // Validation 1: Check if name is provided
+    if (!name || name.trim().length < 2) {
+      setStatusMessage({ type: 'error', text: 'Please enter a valid name (at least 2 characters).' });
+      return;
+    }
+
+    // Validation 2: Check if email is legitimate
+    if (!email || !validateEmail(email)) {
+      setStatusMessage({ type: 'error', text: 'Please enter a valid email address.' });
+      return;
+    }
+
+    // Validation 3: Check message length (minimum 10 characters)
+    if (!message || message.trim().length < 10) {
+      setStatusMessage({ type: 'error', text: 'Message must be at least 10 characters long.' });
+      return;
+    }
+
+    // Validation 4: Check cooldown
+    if (!checkCooldown()) {
+      return;
+    }
+
+    // Validation 5: Check reCAPTCHA (optional - uncomment when you add your site key)
+    if (!captchaToken) {
+      setStatusMessage({ type: 'error', text: 'Please complete the reCAPTCHA verification.' });
+      return;
+    }
+
+    setSending(true);
+    
+    try {
+      // EmailJS
+      await emailjs.sendForm(
+        'service_7p3avvw',  
+        'template_h05bgmn',
+        form,
+        'RfGoFDS_XhqzbbNEh'   
+      );
+      
+      // Set cooldown timestamp
+      localStorage.setItem(COOLDOWN_KEY, Date.now().toString());
+      
+      setStatusMessage({ type: 'success', text: 'Message sent! We\'ll get back to you soon.' });
+      form.reset();
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
+    } catch (error) {
+      console.error('Email send error:', error);
+      setStatusMessage({ type: 'error', text: 'Failed to send. Please email us at design@ihd-mnl.com' });
+    } finally {
+      setSending(false);
+    }
+  };
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string } | null;
@@ -232,38 +328,62 @@ const Home = () => {
               <div className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-300">Phone</p>
-                  <p className="font-heading text-lg">+63 (000) 000-0000</p>
+                  <p className="font-heading text-lg">+63 (917) 863-4060</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-300">Email</p>
-                  <p className="font-heading text-lg">info@ihd.ph</p>
+                  <p className="font-heading text-lg">design@ihd-mnl.com</p>
                 </div>
                 <p className="text-sm text-gray-300">We respond within one business day.</p>
               </div>
-              <form className="grid gap-4">
+              <form className="grid gap-4" onSubmit={handleSubmit}>
                 <input
                   className="w-full rounded-xl border border-secondary/70 bg-primary/70 px-4 py-3 text-sm text-white focus:border-accent focus:outline-none"
                   placeholder="Name"
-                  name="name"
+                  name="user_name"
                   type="text"
+                  required
+                  disabled={sending}
                 />
                 <input
                   className="w-full rounded-xl border border-secondary/70 bg-primary/70 px-4 py-3 text-sm text-white focus:border-accent focus:outline-none"
                   placeholder="Email"
-                  name="email"
+                  name="user_email"
                   type="email"
+                  required
+                  disabled={sending}
                 />
                 <textarea
                   className="w-full rounded-xl border border-secondary/70 bg-primary/70 px-4 py-3 text-sm text-white focus:border-accent focus:outline-none"
                   placeholder="Project vision"
                   name="message"
                   rows={4}
+                  required
+                  disabled={sending}
                 />
+                {/* Uncomment when you get your reCAPTCHA site key */}
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6LfzHjwsAAAAAGiDsWvaX4R963Mn8lA9NeWQaZeN"
+                  onChange={(token) => setCaptchaToken(token)}
+                  theme="dark"
+                />
+
+                {statusMessage && (
+                  <div className={`rounded-xl px-4 py-3 text-sm ${
+                    statusMessage.type === 'success' 
+                      ? 'bg-green-500/20 text-green-300 border border-green-500/30' 
+                      : 'bg-red-500/20 text-red-300 border border-red-500/30'
+                  }`}>
+                    {statusMessage.text}
+                  </div>
+                )}
                 <button
-                  type="button"
-                  className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90"
+                  type="submit"
+                  disabled={sending}
+                  className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Contact Us
+                  {sending ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
