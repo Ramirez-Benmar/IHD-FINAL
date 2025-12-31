@@ -41,18 +41,13 @@ Add these **4 A Records** pointing to GitHub Pages:
 
 | Type | Name | Value | TTL |
 |------|------|-------|-----|
-| CNAME | www | YOUR-USERNAME.github.io | 1 Hour |
+| CNAME | www | ramirez-benmar.github.io | 1 Hour |
 
-**Replace `YOUR-USERNAME`** with your actual GitHub username
-
-**Example:**
-- If your GitHub is `simramirez`, use: `simramirez.github.io`
-
-**How to add:**
+**How to add:****
 1. Click **Add** button
 2. Select **Type: CNAME**
 3. Name: **www**
-4. Value: **YOUR-USERNAME.github.io** (without repo name)
+4. Value: **ramirez-benmar.github.io**
 5. TTL: 1 Hour
 6. Save
 

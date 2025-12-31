@@ -38,9 +38,9 @@ git push -u origin main
 ```
 
 **Example:**
-If your GitHub username is `simramirez` and repo is `ihd-philippines`:
+If your repo is `ihd-philippines`:
 ```bash
-git remote add origin https://github.com/simramirez/ihd-philippines.git
+git remote add origin https://github.com/ramirez-benmar/ihd-philippines.git
 ```
 
 ---
@@ -59,8 +59,9 @@ That's it! This command will:
 3. Your site will be live at: `https://YOUR-USERNAME.github.io/REPO-NAME/`
 
 **Example:**
-- If username: `simramirez` and repo: `ihd-philippines`
-- Your site will be at: `https://simramirez.github.io/ihd-philippines/`
+- If repo: `ihd-philippines`
+- GitHub Pages: `https://ramirez-benmar.github.io/ihd-philippines/`
+- **But you're using custom domain:** `https://ihd-mnl.com` ✓
 
 ---
 
@@ -98,7 +99,7 @@ Value: 185.199.111.153
 
 Type: CNAME
 Name: www
-Value: YOUR-USERNAME.github.io
+Value: ramirez-benmar.github.io
 ```
 
 4. **In GitHub:** Settings → Pages → Custom domain: `ihd-mnl.com`
@@ -154,7 +155,8 @@ After `npm run deploy` completes:
 - ✅ Free hosting forever
 - ✅ HTTPS enabled automatically
 
-**Your site:** `https://YOUR-USERNAME.github.io/REPO-NAME/`
+**Your site:** `https://ihd-mnl.com` (custom domain)  
+**Or:** `https://ramirez-benmar.github.io/REPO-NAME/`
 
 ---
 
@@ -165,7 +167,7 @@ After `npm run deploy` completes:
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/USERNAME/REPO.git
+git remote add origin https://github.com/ramirez-benmar/REPO-NAME.git
 git push -u origin main
 npm run deploy
 
