@@ -50,14 +50,19 @@ git remote add origin https://github.com/ramirez-benmar/ihd-philippines.git
 
 ---
 
-## Step 3: Enable Custom Domain on GitHub
+## Step 3: Configure GitHub Pages
 
 1. Go to your repository on GitHub
 2. Click **Settings** → **Pages**
-3. Under **Custom domain**, enter: `ihd-mnl.com`
+3. Under **Source**, select:
+   - **Deploy from a branch** (NOT GitHub Actions)
+   - Branch: **gh-pages** (this is created automatically by npm run deploy)
+   - Folder: **/ (root)**
 4. Click **Save**
-5. Wait 2-5 minutes for DNS verification
-6. Check the **Enforce HTTPS** box when it becomes available
+5. Under **Custom domain**, enter: `ihd-mnl.com`
+6. Click **Save**
+7. Wait 2-5 minutes for DNS verification
+8. Check the **Enforce HTTPS** box when it becomes available
 
 ---
 
