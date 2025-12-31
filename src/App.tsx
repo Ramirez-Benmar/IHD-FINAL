@@ -7,6 +7,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Partners from './pages/Partners';
+import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/services/infotech" element={<InfoTech />} />
         <Route path="/services/iot" element={<IOT />} />
         <Route path="/services/grms" element={<GRMS />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
