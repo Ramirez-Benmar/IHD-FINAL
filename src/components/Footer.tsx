@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { navItems } from '../data/content';
 import logo from '/logo.png';
 import { IoMailOutline } from 'react-icons/io5';
+import { LiaFacebook } from 'react-icons/lia';
+import { CiLinkedin } from 'react-icons/ci';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -53,6 +55,12 @@ const Footer = () => {
             >
               <IoMailOutline className="text-gray-300 hover:text-accent transition-colors h-7 w-7" />
             </a>
+            <div className="transform transition-transform hover:scale-110 cursor-default">
+              <LiaFacebook className="text-gray-300 hover:text-accent transition-colors h-7 w-7" />
+            </div>
+            <div className="transform transition-transform hover:scale-110 cursor-default">
+              <CiLinkedin className="text-gray-300 hover:text-accent transition-colors h-7 w-7" />
+            </div>
           </div>
         </div>
       </div>
