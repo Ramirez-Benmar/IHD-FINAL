@@ -123,7 +123,7 @@ const Contact = () => {
         </Reveal>
 
         <Reveal delay={140}>
-          <div className="section-card grid gap-8 p-8 md:grid-cols-2">
+          <div className="section-card grid gap-4 md:gap-8 p-6 md:p-8 md:grid-cols-2">
             <div className="space-y-6">
               <div>
                 <h2 className="font-heading text-2xl mb-4">Get in touch</h2>
@@ -148,7 +148,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <form className="grid gap-4" onSubmit={handleSubmit}>
+            <form className="grid gap-4 pr-2" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm text-gray-300 mb-2">
                   Name *

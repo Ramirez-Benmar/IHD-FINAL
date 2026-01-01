@@ -324,7 +324,7 @@ const Home = () => {
           </div>
         </Reveal>
         <Reveal delay={140}>
-          <div className="section-card grid gap-6 p-8 md:grid-cols-2">
+          <div className="section-card grid gap-4 md:gap-6 p-6 md:p-8 md:grid-cols-2">
               <div className="space-y-4">
                 <div>
                   <p className="text-sm text-gray-300">Phone</p>
@@ -336,7 +336,7 @@ const Home = () => {
                 </div>
                 <p className="text-sm text-gray-300">We respond within one business day.</p>
               </div>
-              <form className="grid gap-4" onSubmit={handleSubmit}>
+              <form className="grid gap-4 pr-2" onSubmit={handleSubmit}>
                 <input
                   className="w-full rounded-xl border border-secondary/70 bg-primary/70 px-4 py-3 text-sm text-white focus:border-accent focus:outline-none"
                   placeholder="Name"
