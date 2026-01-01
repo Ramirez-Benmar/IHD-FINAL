@@ -44,7 +44,7 @@ export const employees = [
   {
     name: 'Randel Laureta',
     role: 'Audio Visual Consultant',
-    image: '/team/John.png',
+    image: '/team/Randel.png',
     id: 'employee-randel'
   },
   {
