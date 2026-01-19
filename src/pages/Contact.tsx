@@ -11,14 +11,14 @@ const Contact = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const COOLDOWN_KEY = 'contact_form_cooldown';
-  const COOLDOWN_DURATION = 60000; // 1 minute in milliseconds
+  const COOLDOWN_DURATION = 60000; 
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);
 
-  // Email validation regex (supports all major email providers)
+  // Email validation regex
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
@@ -74,7 +74,7 @@ const Contact = () => {
       return;
     }
 
-    // Validation 5: Check reCAPTCHA (optional - uncomment when you add your site key)
+    // Validation 5: Check reCAPTCHA
     if (!captchaToken) {
       setStatusMessage({ type: 'error', text: 'Please complete the reCAPTCHA verification.' });
       return;
@@ -208,7 +208,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Uncomment when you get your reCAPTCHA site key from https://www.google.com/recaptcha/admin */}
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey="6LfzHjwsAAAAAGiDsWvaX4R963Mn8lA9NeWQaZeN"

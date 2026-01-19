@@ -14,7 +14,7 @@ const Home = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const COOLDOWN_KEY = 'contact_form_cooldown_home';
-  const COOLDOWN_DURATION = 60000; // 1 minute in milliseconds
+  const COOLDOWN_DURATION = 60000;
 
   // Random project selection
   const randomProjects = useMemo(() => {
@@ -22,7 +22,7 @@ const Home = () => {
     return shuffled.slice(0, 3);
   }, []);
 
-  // Email validation regex (supports all major email providers)
+  // Email validation regex
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
@@ -78,7 +78,7 @@ const Home = () => {
       return;
     }
 
-    // Validation 5: Check reCAPTCHA (optional - uncomment when you add your site key)
+    // Validation 5: Check reCAPTCHA
     if (!captchaToken) {
       setStatusMessage({ type: 'error', text: 'Please complete the reCAPTCHA verification.' });
       return;

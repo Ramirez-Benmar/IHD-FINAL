@@ -1,12 +1,12 @@
 export interface ProjectImage {
     slug: string;
     projectNumber: string;
-    name: string;               // full project name from CSV
+    name: string;               
     description?: string;
     location?: string;
     country: string;
-    disciplines: string[];     // full discipline names (Audio Visual, Acoustic, Information Technology, Security)
-    types: string[];           // occupancy/type values from CSV
+    disciplines: string[];     
+    types: string[];           
     image: string;
 }
 
